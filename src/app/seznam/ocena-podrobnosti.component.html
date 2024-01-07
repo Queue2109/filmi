@@ -1,0 +1,11 @@
+
+<div class="ocena">
+    <h2>Ocene filma: </h2>  
+    <div *ngFor="let ocena of ocene">
+        <hr>
+        <p>Čas objave: {{ocena.cas_objave}}</p>
+        <p>Komentar: {{ocena.komentar}}</p>
+        <p><b>Ocena: {{ocena.ocena}}</b></p>
+        <!-- <p> Uporabnik: {{ocena.uporabnik}}</p> -->
+    </div>
+</div>

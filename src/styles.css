@@ -75,3 +75,9 @@ button.delete {
   background-color: gray !important;
   color:white;
 }
+
+.ocena {
+  background-color: antiquewhite;
+  padding: 20px;
+  width: 50%;
+}

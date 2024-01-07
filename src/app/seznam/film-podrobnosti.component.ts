@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Params, Router} from '@angular/router';
-import {Location} from '@angular/common';
 
 import { switchMap } from 'rxjs/operators';
 
 import {Film} from "./models/film";
 import {FilmService} from "./services/film.service";
+import { Ocena } from './models/ocena';
 
 @Component({
     moduleId: module.id,
@@ -14,10 +14,10 @@ import {FilmService} from "./services/film.service";
 })
 export class FilmPodrobnostiComponent implements OnInit {
     film: Film;
+    ocene: Ocena[] = [];
 
     constructor(private filmService: FilmService,
                 private route: ActivatedRoute,
-                private location: Location,
                 private router: Router) {
     }
 
@@ -27,8 +27,9 @@ export class FilmPodrobnostiComponent implements OnInit {
             .subscribe(film => this.film = film);
     }
 
-    dodajArtikel(): void {
-        //this.router.navigate(['seznami/' + this.seznam.id + '/dodaj']);
+    oceneView: boolean = false;
+    toggleOceneView(): void {
+        this.oceneView = !this.oceneView;
     }
 
     nazaj(): void {
