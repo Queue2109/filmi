@@ -1,14 +1,14 @@
-<div *ngIf="seznam">
+<div *ngIf="film">
 
-    <h3>{{seznam.naziv}}</h3>
+    <h3>{{film.naslov}}</h3>
 
-    <p>{{seznam.opis}}</p>
-    <p>Ustvarjen: {{seznam.ustvarjen | date: 'dd. MM. yyyy'}}</p>
+    <p>{{film.opis}}</p>
+    <p>Ustvarjen: {{film.leto_izzida }}</p>
 
-    <ul *ngFor="let artikel of seznam.artikli" class="artikli">
+   <!-- <ul *ngFor="let artikel of seznam.artikli" class="artikli">
         <li><b>{{artikel.naziv}}</b> <span *ngIf="artikel.opis"> &#8211; {{artikel.opis}}</span></li>
     </ul>
-
+-->
     <br>
     <button (click)="dodajArtikel()">Dodaj artikel</button>
     <button (click)="nazaj()">Nazaj</button>

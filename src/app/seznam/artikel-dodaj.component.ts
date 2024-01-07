@@ -25,11 +25,11 @@ export class ArtikelDodajComponent {
         this.sub = this.route.params.subscribe(params => {
            this.seznamId = +params['id'];
         });
-      }
+    }
 
-      ngOnDestroy() {
-        this.sub.unsubscribe();
-      }
+    ngOnDestroy() {
+    this.sub.unsubscribe();
+    }
 
     submitForm(): void {
         this.seznamiService.create(this.seznamId, this.artikel)

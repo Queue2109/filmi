@@ -1,15 +1,15 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
-import {SeznamiComponent} from './seznami/seznami.component';
-import {SeznamPodrobnostiComponent} from './seznami/seznam-podrobnosti.component';
-import { ArtikelDodajComponent } from './seznami/artikel-dodaj.component';
+import {SeznamComponent} from './seznam/seznam.component';
+import {FilmPodrobnostiComponent} from './seznam/film-podrobnosti.component';
+import { ArtikelDodajComponent } from './seznam/artikel-dodaj.component';
 
 const routes: Routes = [
-    {path: '', redirectTo: '/seznami', pathMatch: 'full'},
-    {path: 'seznami', component: SeznamiComponent},
-    {path: 'seznami/:id', component: SeznamPodrobnostiComponent},
-    {path: 'seznami/:id/dodaj', component: ArtikelDodajComponent}
+    {path: '', redirectTo: '/seznam', pathMatch: 'full'},
+    {path: 'seznam', component: SeznamComponent},
+    {path: 'film/:id', component: FilmPodrobnostiComponent},
+    // {path: 'seznami/:id/dodaj', component: ArtikelDodajComponent}
 ];
 
 @NgModule({

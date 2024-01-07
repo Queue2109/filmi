@@ -6,10 +6,10 @@ import {FormsModule} from '@angular/forms';
 import {AppRoutingModule} from './app-routing.module';
 
 import {AppComponent} from './app.component';
-import {SeznamiComponent} from './seznami/seznami.component';
-import {ArtikelDodajComponent} from './seznami/artikel-dodaj.component';
-import {SeznamPodrobnostiComponent} from './seznami/seznam-podrobnosti.component';
-import {SeznamiService} from './seznami/services/seznami.service';
+import {SeznamComponent} from './seznam/seznam.component';
+import {ArtikelDodajComponent} from './seznam/artikel-dodaj.component';
+import {FilmPodrobnostiComponent} from './seznam/film-podrobnosti.component';
+import {FilmService} from "./seznam/services/film.service";
 
 
 @NgModule({
@@ -21,11 +21,11 @@ import {SeznamiService} from './seznami/services/seznami.service';
     ],
     declarations: [
         AppComponent,
-        SeznamiComponent,
-        SeznamPodrobnostiComponent,
-        ArtikelDodajComponent
+        SeznamComponent,
+        FilmPodrobnostiComponent,
+        ArtikelDodajComponent,
     ],
-    providers: [SeznamiService],
+    providers: [FilmService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

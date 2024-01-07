@@ -6,16 +6,18 @@ import { switchMap } from 'rxjs/operators';
 
 import {NakupovalniSeznam} from './models/seznam';
 import {SeznamiService} from './services/seznami.service';
+import {Film} from "./models/film";
+import {FilmService} from "./services/film.service";
 
 @Component({
     moduleId: module.id,
-    selector: 'seznam-podrobnosti',
-    templateUrl: 'seznam-podrobnosti.component.html'
+    selector: 'film-podrobnosti',
+    templateUrl: 'film-podrobnosti.component.html'
 })
-export class SeznamPodrobnostiComponent implements OnInit {
-    seznam: NakupovalniSeznam;
+export class FilmPodrobnostiComponent implements OnInit {
+    film: Film;
 
-    constructor(private seznamService: SeznamiService,
+    constructor(private filmService: FilmService,
                 private route: ActivatedRoute,
                 private location: Location,
                 private router: Router) {
@@ -23,15 +25,15 @@ export class SeznamPodrobnostiComponent implements OnInit {
 
     ngOnInit(): void {
        this.route.params.pipe(
-            switchMap((params: Params) => this.seznamService.getSeznam(+params['id'])))
-            .subscribe(seznam => this.seznam = seznam);
+            switchMap((params: Params) => this.filmService.getFilm(+params['id'])))
+            .subscribe(film => this.film = film);
     }
 
     dodajArtikel(): void {
-        this.router.navigate(['seznami/' + this.seznam.id + '/dodaj']);
+        //this.router.navigate(['seznami/' + this.seznam.id + '/dodaj']);
     }
 
     nazaj(): void {
-        this.router.navigate(['seznami']);
+        this.router.navigate(['seznam']);
     }
 }
