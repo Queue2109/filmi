@@ -3,6 +3,7 @@ import {ActivatedRoute, Params, Router} from '@angular/router';
 import {Location} from '@angular/common';
 
 import { switchMap } from 'rxjs/operators';
+import { Film } from './models/film';
 
 import {SeznamFilmov} from './models/seznam';
 import {SeznamiService} from './services/seznami.service';
@@ -14,6 +15,7 @@ import {SeznamiService} from './services/seznami.service';
 })
 export class FilmPodrobnostiComponent implements OnInit {
     seznam: SeznamFilmov;
+    film:Film;
 
     constructor(private seznamService: SeznamiService,
                 private route: ActivatedRoute,
@@ -23,8 +25,8 @@ export class FilmPodrobnostiComponent implements OnInit {
 
     ngOnInit(): void {
        this.route.params.pipe(
-            switchMap((params: Params) => this.seznamService.getSeznam(+params['id'])))
-            .subscribe(seznam => this.seznam = seznam);
+            switchMap((params: Params) => this.seznamService.getFilm(+params['id'])))
+            .subscribe(seznam => this.film = seznam);
     }
 
 

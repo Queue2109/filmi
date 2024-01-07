@@ -27,6 +27,12 @@ export class SeznamiService {
                         .pipe(catchError(this.handleError));
     }
 
+    getFilm(id: number): Observable<Film> {
+        const url = `${this.url}/${id}`;
+        return this.http.get<Film>(url)
+                        .pipe(catchError(this.handleError));
+    }
+
     delete(id: number): Observable<number> {
         const url = `${this.url}/${id}`;
         return this.http.delete<number>(url, {headers: this.headers})
@@ -35,7 +41,7 @@ export class SeznamiService {
 
     create(film: Film): Observable<number> {
         const url = `${this.url}/dodaj`;
-        return this.http.post<Film>(url, JSON.stringify(film), { headers: this.headers })
+        return this.http.post<Film>(url, film, { headers: this.headers })
             .pipe(
                 map((response: any) => response.id), // Extract the ID from the response
                 catchError(this.handleError)
