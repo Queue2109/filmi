@@ -1,9 +1,9 @@
-import { Artikel } from './artikel';
+import { Film } from './film';
 
-export class NakupovalniSeznam {
+export class SeznamFilmov {
     id: number;
     naziv: string;
     opis: string;
     ustvarjen: string;
-    artikli: Artikel[];
+    filmi: Film[];
 }

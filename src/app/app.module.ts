@@ -7,9 +7,9 @@ import {AppRoutingModule} from './app-routing.module';
 
 import {AppComponent} from './app.component';
 import {SeznamiComponent} from './seznami/seznami.component';
-import {ArtikelDodajComponent} from './seznami/artikel-dodaj.component';
-import {SeznamPodrobnostiComponent} from './seznami/seznam-podrobnosti.component';
+import {FilmPodrobnostiComponent} from './seznami/film-podrobnosti.component';
 import {SeznamiService} from './seznami/services/seznami.service';
+import { FilmDodajComponent } from './seznami/film-dodaj.component';
 
 
 @NgModule({
@@ -22,8 +22,8 @@ import {SeznamiService} from './seznami/services/seznami.service';
     declarations: [
         AppComponent,
         SeznamiComponent,
-        SeznamPodrobnostiComponent,
-        ArtikelDodajComponent
+        FilmPodrobnostiComponent,
+        FilmDodajComponent
     ],
     providers: [SeznamiService],
     bootstrap: [AppComponent]

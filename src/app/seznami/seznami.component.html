@@ -1,11 +1,12 @@
-<h2>Nakupovalni seznami</h2>
+<h2>Seznam filmov</h2>
 
 <ul class="seznami">
-    <li *ngFor="let seznam of seznami" (click)="naPodrobnosti(seznam)">
-        <span>{{seznam.naziv}}</span>
-        <button class="delete"
+    <li *ngFor="let film of seznami" (click)="naPodrobnosti(film)">
+        <span>{{film.naslov}}</span>
+        <!-- <button class="delete"
                 (click)="delete(seznam); $event.stopPropagation()">x
-        </button>
+        </button> -->
     </li>
 </ul>
+<button (click)="dodajFilm()">Dodaj film</button>
 

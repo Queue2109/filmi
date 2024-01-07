@@ -1,4 +1,4 @@
 export const environment = {
     production: false,
-    apiUrl: 'https://nakupovanje.prpo.si/v1'
+    apiUrl: 'https://filmi.prpo.si/v1'
 };
