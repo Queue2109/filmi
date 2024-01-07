@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {Film} from "./models/film";
-import {SeznamiService} from "./services/seznami.service";
-import {NakupovalniSeznam} from "./models/seznam";
 import {FilmService} from "./services/film.service";
 
 

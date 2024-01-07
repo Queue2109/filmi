@@ -4,8 +4,6 @@ import {Location} from '@angular/common';
 
 import { switchMap } from 'rxjs/operators';
 
-import {NakupovalniSeznam} from './models/seznam';
-import {SeznamiService} from './services/seznami.service';
 import {Film} from "./models/film";
 import {FilmService} from "./services/film.service";
 

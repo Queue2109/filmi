@@ -3,7 +3,6 @@ import {RouterModule, Routes} from '@angular/router';
 
 import {SeznamComponent} from './seznam/seznam.component';
 import {FilmPodrobnostiComponent} from './seznam/film-podrobnosti.component';
-import { ArtikelDodajComponent } from './seznam/artikel-dodaj.component';
 
 const routes: Routes = [
     {path: '', redirectTo: '/seznam', pathMatch: 'full'},

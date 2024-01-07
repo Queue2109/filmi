@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
 import {Router, Params, ActivatedRoute} from '@angular/router';
 
-import {SeznamiService} from './services/seznami.service';
 import { Film } from './models/film';
 // import { switchMap } from 'rxjs/operators';
 
@@ -16,17 +15,17 @@ export class FilmDodajComponent {
     // seznamId: number;
     // private sub: any;
 
-    constructor(private seznamiService: SeznamiService,
+    constructor(/*private seznamiService: SeznamiService,*/
                 private router: Router,
                 private route: ActivatedRoute) {
     }
     submitForm(): void {
-        this.seznamiService.create(this.film)
+       /* this.seznamiService.create(this.film)
         .subscribe((newMovieId: number) => {
             console.log('Newly created movie ID:', newMovieId);
             // Perform any additional actions with the new ID if needed
             this.router.navigate(['/filmi/' + newMovieId]);
-        });}
+        });*/}
 
     nazaj(): void {
         this.router.navigate(['/filmi']);

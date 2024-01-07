@@ -7,7 +7,6 @@ import {AppRoutingModule} from './app-routing.module';
 
 import {AppComponent} from './app.component';
 import {SeznamComponent} from './seznam/seznam.component';
-import {ArtikelDodajComponent} from './seznam/artikel-dodaj.component';
 import {FilmPodrobnostiComponent} from './seznam/film-podrobnosti.component';
 import {FilmService} from "./seznam/services/film.service";
 
@@ -23,7 +22,6 @@ import {FilmService} from "./seznam/services/film.service";
         AppComponent,
         SeznamComponent,
         FilmPodrobnostiComponent,
-        ArtikelDodajComponent,
     ],
     providers: [FilmService],
     bootstrap: [AppComponent]
