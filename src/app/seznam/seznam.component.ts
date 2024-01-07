@@ -27,6 +27,10 @@ export class SeznamComponent implements OnInit {
             .subscribe(seznam => this.seznam = seznam);
     }
 
+    dodajFilm() {
+        this.router.navigate(['/dodaj']);
+    }
+
     naPodrobnosti(film: Film): void {
         this.film = film;
         this.router.navigate(['/film', this.film.film_id]);

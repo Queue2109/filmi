@@ -10,6 +10,7 @@ import {SeznamComponent} from './seznam/seznam.component';
 import {FilmPodrobnostiComponent} from './seznam/film-podrobnosti.component';
 import {FilmService} from "./seznam/services/film.service";
 import { OcenaPodrobnosti } from './seznam/ocena-podrobnosti.component';
+import { FilmDodajComponent } from './seznam/film-dodaj.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { OcenaPodrobnosti } from './seznam/ocena-podrobnosti.component';
         AppComponent,
         SeznamComponent,
         FilmPodrobnostiComponent,
-        OcenaPodrobnosti
+        OcenaPodrobnosti,
+        FilmDodajComponent
     ],
     providers: [FilmService],
     bootstrap: [AppComponent]

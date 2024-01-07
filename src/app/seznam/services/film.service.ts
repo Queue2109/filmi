@@ -26,6 +26,12 @@ export class FilmService {
             .pipe(catchError(this.handleError));
     }
 
+    dodajFilm(film: Film): Observable<Film> {
+        return this.http.post(`${this.filmiUrl}/dodaj`, JSON.stringify(film), { headers: this.headers })
+            .pipe(catchError(this.handleError));
+    }
+    
+
     getOcene(id: number): Observable<Ocena[]> {
         console.log(id + "id");
         const url = `${this.oceneUrl}/${id}`;

@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {Router, Params, ActivatedRoute} from '@angular/router';
 
 import { Film } from './models/film';
+import { FilmService } from './services/film.service';
 // import { switchMap } from 'rxjs/operators';
 
 @Component({
@@ -12,20 +13,17 @@ import { Film } from './models/film';
 export class FilmDodajComponent {
 
     film:Film = new Film;
-    // seznamId: number;
-    // private sub: any;
 
-    constructor(/*private seznamiService: SeznamiService,*/
+    constructor(private filmService: FilmService,
                 private router: Router,
                 private route: ActivatedRoute) {
     }
+
+    ngOnInit(): void {}
     submitForm(): void {
-       /* this.seznamiService.create(this.film)
-        .subscribe((newMovieId: number) => {
-            console.log('Newly created movie ID:', newMovieId);
-            // Perform any additional actions with the new ID if needed
-            this.router.navigate(['/filmi/' + newMovieId]);
-        });*/}
+        this.filmService.dodajFilm(this.film).subscribe(() =>
+        this.router.navigate(['/seznam']));
+    }
 
     nazaj(): void {
         this.router.navigate(['/filmi']);

@@ -1,11 +1,16 @@
 
 <div class="ocena">
-    <h2>Ocene filma: </h2>  
-    <div *ngFor="let ocena of ocene">
-        <hr>
-        <p>Čas objave: {{ocena.cas_objave}}</p>
-        <p>Komentar: {{ocena.komentar}}</p>
-        <p><b>Ocena: {{ocena.ocena}}</b></p>
-        <!-- <p> Uporabnik: {{ocena.uporabnik}}</p> -->
+    <div *ngIf="ocene && ocene.length > 0">
+        <div *ngFor="let ocena of ocene">
+            <hr>
+            <h2>Ocene filma: </h2>  
+            <p>Čas objave: {{ocena.cas_objave}}</p>
+            <p>Komentar: {{ocena.komentar}}</p>
+            <p><b>Ocena: {{ocena.ocena}}</b></p>
+            <!-- <p> Uporabnik: {{ocena.uporabnik}}</p> -->
+        </div>
+    </div>
+    <div *ngIf="!ocene || ocene.length === 0">
+        <p>Za ta film še ne obstajajo ocene.</p>
     </div>
 </div>
