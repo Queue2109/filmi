@@ -11,6 +11,7 @@ import {FilmPodrobnostiComponent} from './seznam/film-podrobnosti.component';
 import {FilmService} from "./seznam/services/film.service";
 import { OcenaPodrobnosti } from './seznam/ocena-podrobnosti.component';
 import { FilmDodajComponent } from './seznam/film-dodaj.component';
+import {OcenaService} from "./seznam/services/ocena.service";
 
 
 @NgModule({
@@ -27,7 +28,7 @@ import { FilmDodajComponent } from './seznam/film-dodaj.component';
         OcenaPodrobnosti,
         FilmDodajComponent
     ],
-    providers: [FilmService],
+    providers: [FilmService, OcenaService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

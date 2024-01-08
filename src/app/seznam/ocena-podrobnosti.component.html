@@ -1,14 +1,36 @@
 
 <div class="ocena">
-    <div *ngIf="ocene && ocene.length > 0">
+    <div *ngIf="ocene && ocene.length > 0 && addocena.hidden">
+        <h2>Ocene filma: </h2>
         <div *ngFor="let ocena of ocene">
             <hr>
-            <h2>Ocene filma: </h2>  
-            <p>Čas objave: {{ocena.cas_objave}}</p>
+            <p>Čas objave: {{ocena.cas_objave | date: 'dd. mm. yyyy, hh:MM'}}</p>
             <p>Komentar: {{ocena.komentar}}</p>
             <p><b>Ocena: {{ocena.ocena}}</b></p>
             <!-- <p> Uporabnik: {{ocena.uporabnik}}</p> -->
+            <button (click)="odstraniOceno(ocena)">Briši</button>
         </div>
+    </div>
+    <button (click)="addocena.hidden=false" *ngIf="addocena.hidden">Dodaj oceno</button>
+
+    <div #addocena hidden="true">
+
+        <form  (ngSubmit)="dodajOceno(novaOcena)"  ngNativeValidate>
+            <table>
+                <tr>
+                    <td><label for="ocena">Ocena</label></td>
+                    <td><input [(ngModel)]="novaOcena.ocena" id="ocena" name="ocena" [min]="1" [max]="10" required /></td>
+                </tr>
+                <tr>
+                    <td><label for="komentar">Komentar</label></td>
+                    <td><input [(ngModel)]="novaOcena.komentar" id="komentar" name="komentar" /></td>
+                </tr>
+            </table>
+
+            <br/>
+            <button type="button" (click)="addocena.hidden=true">Nazaj</button>
+            <button type="submit" (click)="addocena.hidden=true">Dodaj</button>
+        </form>
     </div>
     <div *ngIf="!ocene || ocene.length === 0">
         <p>Za ta film še ne obstajajo ocene.</p>
