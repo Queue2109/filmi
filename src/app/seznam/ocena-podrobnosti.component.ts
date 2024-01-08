@@ -43,6 +43,7 @@ export class OcenaPodrobnosti implements OnInit{
 
         this.ocenaService.dodajOceno(ocena)
             .subscribe(ocena => {this.ocene.push(ocena);});
+        location.reload();
     }
 
     odstraniOceno(ocena: Ocena): void {
@@ -51,6 +52,7 @@ export class OcenaPodrobnosti implements OnInit{
                 this.filmService.getOcene(this.film.film_id)
                     .subscribe(ocene => {this.ocene = ocene;});
             })
+        location.reload();
     }
 
 }

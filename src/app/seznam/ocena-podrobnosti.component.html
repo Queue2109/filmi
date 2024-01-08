@@ -4,7 +4,7 @@
         <h2>Ocene filma: </h2>
         <div *ngFor="let ocena of ocene">
             <hr>
-            <p>Čas objave: {{ocena.cas_objave | date: 'dd. mm. yyyy, hh:MM'}}</p>
+            <p>Čas objave: {{ocena.cas_objave | date: 'dd. MM. yyyy, hh:mm'}}</p>
             <p>Komentar: {{ocena.komentar}}</p>
             <p><b>Ocena: {{ocena.ocena}}</b></p>
             <!-- <p> Uporabnik: {{ocena.uporabnik}}</p> -->
